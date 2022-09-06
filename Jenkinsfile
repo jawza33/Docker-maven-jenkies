@@ -3,14 +3,13 @@ pipeline {
 
     environment {
 
-        AWS_ACCESS_KEY_ID     = credentials('jenkins-aws-secret-key-id')
-        AWS_SECRET_ACCESS_KEY = credentials('jenkins-aws-secret-access-key')
-
-        AWS_S3_BUCKET = "artefact-bucket-repo"
-        ARTIFACT_NAME = "Hello-hanan.jar"
-        AWS_EB_APP_NAME = "java-webapp"
+        AWS_ACCESS_KEY_ID = credentials('aws-id-secret')
+        AWS_SECRET_ACCESS_KEY = credentials('aws-password-secret')
+        AWS_S3_BUCKET = "spring-project-mavn"
+        ARTIFACT_NAME = "spring-boot.jar"
+        AWS_EB_APP_NAME = "week13"
         AWS_EB_APP_VERSION = "${BUILD_ID}"
-        AWS_EB_ENVIRONMENT = "Javawebapp-env"
+        AWS_EB_ENVIRONMENT = "Week13-env"
     }
 stages {
         stage('Validate') {
